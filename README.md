@@ -19,7 +19,7 @@ The CyberSec RedBlue Home Lab was designed to create a hands-on environment for 
 - **Ubuntu Server (Wazuh)** : Open-source SIEM for threat detection and log monitoring  
 - **Ubuntu Desktop** : Blue Team workstation for investigation and monitoring  
 - **Flare VM** : Malware analysis and Windows reverse engineering environment  
-- **VirtualBox** : Hypervisor for managing all virtual machines  
+- **VMware Workstation Pro** : Virtualization platform  
 - **Wireshark** : Packet capturing and network protocol analysis  
 - **Nmap, Metasploit, Netcat, etc.** : Offensive tools for scanning and exploitation  
 - **OSSEC/Wazuh Agents** : For log forwarding and endpoint monitoring  
