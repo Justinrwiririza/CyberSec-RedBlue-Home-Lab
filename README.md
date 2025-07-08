@@ -28,9 +28,8 @@ The CyberSec RedBlue Home Lab was designed to create a hands-on environment for 
 
 ### Ref 1: Lab Network Topology  
 _This diagram shows how all virtual machines are networked together. All machines (except Flare VM) are on the NAT adapter to communicate internally. Flare VM is on a Host-Only adapter for isolation._  
-![Network Diagram](img/network_diagram.png)
+<img src="https://i.imgur.com/TQM5rDj.png" alt="CyberSec Lab Diagram" width="600"/>
 
----
 
 ### Ref 2: Kali Linux Setup  
 _Kali Linux configured with tools like Nmap, Metasploit, and Burp Suite for offensive security exercises._  
