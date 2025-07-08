@@ -31,12 +31,57 @@ _This diagram shows how all virtual machines are networked together. All machine
 <img src="https://i.imgur.com/TQM5rDj.png" alt="CyberSec Lab Diagram" width="600"/>
 
 
-### Ref 2: Kali Linux Setup  
-_Kali Linux configured with tools like Nmap, Metasploit, and Burp Suite for offensive security exercises._  
-![Kali Setup](img/kali_setup.png)
-
----
-
+### Ref 2: Virtual Machine Setup & Configuration  
+In this phase, I installed and configured all virtual machines listed in the network topology. Each VM was assigned to its appropriate role and network adapter, with static IPs set where needed. Tools and agents were installed for threat simulation, detection, and analysis.  
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>VM Name</th>
+      <th>OS/Tool</th>
+      <th>Role</th>
+      <th>Network</th>
+      <th>Key Setup Items</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>kali-attacker</td>
+      <td>Kali Linux</td>
+      <td>Red Team Attacker</td>
+      <td>NAT</td>
+      <td>Nmap, Metasploit, Wireshark, Burp Suite, Gobuster</td>
+    </tr>
+    <tr>
+      <td>metasploitable-victim</td>
+      <td>Metasploitable</td>
+      <td>Vulnerable Target</td>
+      <td>NAT</td>
+      <td>Default credentials, no hardening</td>
+    </tr>
+    <tr>
+      <td>ubuntu-wazuh-server</td>
+      <td>Ubuntu Server + Wazuh</td>
+      <td>SIEM & Host Monitoring</td>
+      <td>NAT</td>
+      <td>Wazuh Manager, Filebeat, Suricata, Elasticsearch</td>
+    </tr>
+    <tr>
+      <td>ubuntu-desktop</td>
+      <td>Ubuntu Desktop</td>
+      <td>Blue Team Workstation</td>
+      <td>NAT</td>
+      <td>Wazuh Agent, OSSEC Alerts, Wireshark</td>
+    </tr>
+    <tr>
+      <td>flare-vm</td>
+      <td>Flare VM (Windows)</td>
+      <td>Malware Analysis & Reverse Engineering</td>
+      <td>Host-Only</td>
+      <td>IDA Free, PE Studio, x64dbg, dnSpy, Wireshark</td>
+    </tr>
+  </tbody>
+</table>
+<img src="https://i.imgur.com/m0GUMK3.png" alt="CyberSec RedBlue Lab Topology" width="600"/>
 ### Ref 3: Metasploitable Target  
 _Metasploitable intentionally vulnerable VM set up as a Red Team target._  
 ![Metasploitable](img/metasploitable_running.png)
