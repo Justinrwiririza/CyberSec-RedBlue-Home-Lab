@@ -81,7 +81,7 @@ In this phase, I installed and configured all virtual machines listed in the net
     </tr>
   </tbody>
 </table>
-<img src="https://i.imgur.com/m0GUMK3.png" alt="CyberSec RedBlue Lab Topology" width="600"/>
+
 ### Ref 3: Metasploitable Target  
 _Metasploitable intentionally vulnerable VM set up as a Red Team target._  
 ![Metasploitable](img/metasploitable_running.png)
