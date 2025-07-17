@@ -29,22 +29,28 @@ The CyberSec RedBlue Home Lab was designed to create a hands-on environment for 
 ### Step 1: Lab Network Topology  
 _This diagram shows how all virtual machines are networked together. All machines (except Flare VM) are on the NAT adapter to communicate internally. Flare VM is on a Host-Only adapter for isolation._  
 <img src="https://i.imgur.com/TQM5rDj.png" alt="CyberSec Lab Diagram" width="600"/>
-## Kali Linux (Red Team) Dashboad
+## Kali Linux (Red Team) Dashboard
+Simulate attacker behavior
+
 <img src="https://i.imgur.com/pW9shD2.png" alt="CyberSec Lab Diagram 6" width="600"/>
 
-## Metasploite Dashboad
+## Metasploite Dashboard
+Provide an exploitable target
+
 <img src="https://i.imgur.com/PL9bwpt.png" alt="CyberSec Lab Diagram 7" width="600"/>
 
-## Ubuntu Desktop Dashboad
+## Ubuntu Desktop Dashboard
 Ubuntu Desktop used as Blue Team station to access Wazuh dashboard, Wireshark, and open-source threat intel feeds
+
 <img src="https://i.imgur.com/0tA8IWB.png" alt="CyberSec Lab Diagram 8" width="600"/>
 
-## Wazuh Dashboad
-Ubuntu Server running Wazuh for log analysis and real-time alerts.
+## Wazuh Dashboard
+Monitor activity, raise alerts, and act as the Blue Team's SIEM
 <img src="https://i.imgur.com/shXSmzv.png" alt="CyberSec Lab Diagram 9" width="600"/>
 
-## Flare vm Dashboad
-Windows machine configured with Flare VM for malware reverse engineering and Windows-based incident response tools.
+## Flare vm Dashboard
+Isolated malware analysis and reverse engineering
+
 <img src="https://i.imgur.com/4AUEqxL.png" alt="CyberSec Lab Diagram 5" width="600"/>
 
 ### Step 2: Virtual Machine Setup & Configuration  
@@ -101,20 +107,19 @@ In this phase, I installed and configured all virtual machines listed in the net
 ### Step 3: Network Validation
 Before launching anything, I made sure all machines were properly connected based on their network configurations (NAT, Host-Only, etc.).
 I used ping, ifconfig, and ip a from Kali to confirm communication with Metasploitable and Wazuh. Smooth and responsive everything was talking perfectly. 
-"type in kali linux ping followed by Metasploitable or wazuh to see if communication is perfect" 
+
+From Kali, run: 
+
+ping "IP of Metasploitable"
+
+ping "IP of Wazuh server"
+
 
 ### Step 4: Snapshot All VMs
-_Ubuntu Server running Wazuh for log analysis and real-time alerts._  
-![Wazuh Dashboard](img/wazuh_dashboard.png)
+Before diving into attack scenarios, I took snapshots of each VM. It's like creating a "checkpoint" if anything broke during testing (and some things did!), 
+I could easily roll back.
 
----
+### Ref 5: Red Team Offensive Testing 
 
-### Ref 5: Flare VM  
-_Windows machine configured with Flare VM for malware reverse engineering and Windows-based incident response tools._  
-![Flare VM](img/flarevm_analysis.png)
 
----
 
-### Ref 6: Ubuntu Desktop as Analyst Station  
-_Ubuntu Desktop used as Blue Team station to access Wazuh dashboard, Wireshark, and open-source threat intel feeds._  
-![Analyst Workstation](img/ubuntu_desktop.png)
