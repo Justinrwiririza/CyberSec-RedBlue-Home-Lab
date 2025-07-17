@@ -26,29 +26,28 @@ The CyberSec RedBlue Home Lab was designed to create a hands-on environment for 
 
 ## Steps  
 
-### Ref 1: Lab Network Topology  
+### Step 1: Lab Network Topology  
 _This diagram shows how all virtual machines are networked together. All machines (except Flare VM) are on the NAT adapter to communicate internally. Flare VM is on a Host-Only adapter for isolation._  
 <img src="https://i.imgur.com/TQM5rDj.png" alt="CyberSec Lab Diagram" width="600"/>
-## Kali Linux (Red Team)
+## Kali Linux (Red Team) Dashboad
 <img src="https://i.imgur.com/pW9shD2.png" alt="CyberSec Lab Diagram 6" width="600"/>
 
-## Metasploite
+## Metasploite Dashboad
 <img src="https://i.imgur.com/PL9bwpt.png" alt="CyberSec Lab Diagram 7" width="600"/>
 
-## Ubuntu Desktop
+## Ubuntu Desktop Dashboad
+Ubuntu Desktop used as Blue Team station to access Wazuh dashboard, Wireshark, and open-source threat intel feeds
 <img src="https://i.imgur.com/0tA8IWB.png" alt="CyberSec Lab Diagram 8" width="600"/>
 
-## Wazuh
+## Wazuh Dashboad
+Ubuntu Server running Wazuh for log analysis and real-time alerts.
 <img src="https://i.imgur.com/shXSmzv.png" alt="CyberSec Lab Diagram 9" width="600"/>
 
-## Flare vm 
+## Flare vm Dashboad
+Windows machine configured with Flare VM for malware reverse engineering and Windows-based incident response tools.
 <img src="https://i.imgur.com/4AUEqxL.png" alt="CyberSec Lab Diagram 5" width="600"/>
 
-
-
-
-
-### Ref 2: Virtual Machine Setup & Configuration  
+### Step 2: Virtual Machine Setup & Configuration  
 In this phase, I installed and configured all virtual machines listed in the network topology. Each VM was assigned to its appropriate role and network adapter, with static IPs set where needed. Tools and agents were installed for threat simulation, detection, and analysis.  
 <table border="1" cellpadding="8" cellspacing="0">
   <thead>
@@ -99,13 +98,12 @@ In this phase, I installed and configured all virtual machines listed in the net
   </tbody>
 </table>
 
-### Ref 3: Metasploitable Target  
-_Metasploitable intentionally vulnerable VM set up as a Red Team target._  
-![Metasploitable](img/metasploitable_running.png)
+### Step 3: Network Validation
+Before launching anything, I made sure all machines were properly connected based on their network configurations (NAT, Host-Only, etc.).
+I used ping, ifconfig, and ip a from Kali to confirm communication with Metasploitable and Wazuh. Smooth and responsive everything was talking perfectly. 
+"type in kali linux ping followed by Metasploitable or wazuh to see if communication is perfect" 
 
----
-
-### Ref 4: Wazuh Dashboard  
+### Step 4: Snapshot All VMs
 _Ubuntu Server running Wazuh for log analysis and real-time alerts._  
 ![Wazuh Dashboard](img/wazuh_dashboard.png)
 
