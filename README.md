@@ -120,6 +120,15 @@ Before diving into attack scenarios, I took snapshots of each VM. It's like crea
 I could easily roll back.
 
 ### Ref 5: Red Team Offensive Testing 
+Reconnaissance
+
+Run:
+
+- nmap -sV to scan Metasploitable to discover software and version on metasploite
+<img src="https://i.imgur.com/GMRBDvG.png" alt="CyberSec Lab Diagram" width="600"/>
+
+- gobuster to discover hidden web directories.
+<img src="https://i.imgur.com/PJgxDgw.png" alt="CyberSec Lab Diagram" width="600"/>
 
 
 
