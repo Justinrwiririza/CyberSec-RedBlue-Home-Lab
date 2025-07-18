@@ -126,9 +126,12 @@ Run:
 
 - nmap -sV to scan Metasploitable to discover software and version on metasploite
 <img src="https://i.imgur.com/GMRBDvG.png" alt="CyberSec Lab Diagram" width="600"/>
+After Nmap scan, the Metasploitable machine revealed 23 open ports, exposing a wide attack surface. Key vulnerable services include vsftpd 2.3.4 (with a known backdoor), Apache 2.2.8, and Samba smbd, which are outdated and exploitable. The scan also identified multiple remote access services like Telnet, SSH, and VNC, increasing the risk of brute-force or misconfiguration attacks. Additionally, services like MySQL, PostgreSQL, and Java RMI were found open, which could be exploited through weak credentials or serialization vulnerabilities. Notably, a bindshell on port 1524 suggests an already compromised backdoor providing root shell access.
+
 
 - gobuster to discover hidden web directories.
 <img src="https://i.imgur.com/PJgxDgw.png" alt="CyberSec Lab Diagram" width="600"/>
+The Gobuster scan metasploitable IP revealed several interesting directories and files that could be leveraged during further analysis. It identified potentially sensitive files like .htaccess, .htpasswd, and .hta, though they returned 403 Forbidden, indicating restricted access. Accessible directories such as phpMyAdmin, test and dav suggest misconfigurations or outdated web applications that may be vulnerable. Notably, /phpinfo.php and /phpinfo are publicly exposed, potentially leaking system and PHP configuration details useful for crafting exploits. These findings highlight weak access controls and outdated components in the web environment, ideal for web-based attack vectors.
 
 
 
