@@ -130,8 +130,16 @@ After Nmap scan, the Metasploitable machine revealed 23 open ports, exposing a w
 
 
 - gobuster to discover hidden web directories.
-<img src="https://i.imgur.com/PJgxDgw.png" alt="CyberSec Lab Diagram" width="600"/>
-The Gobuster scan metasploitable IP revealed several interesting directories and files that could be leveraged during further analysis. It identified potentially sensitive files like .htaccess, .htpasswd, and .hta, though they returned 403 Forbidden, indicating restricted access. Accessible directories such as phpMyAdmin, test and dav suggest misconfigurations or outdated web applications that may be vulnerable. Notably, /phpinfo.php and /phpinfo are publicly exposed, potentially leaking system and PHP configuration details useful for crafting exploits. These findings highlight weak access controls and outdated components in the web environment, ideal for web-based attack vectors.
+<img src="https://i.imgur.com/CS0YyCn.png" alt="CyberSec Lab Diagram" width="600"/>
 
+The Gobuster scan metasploitable IP revealed several interesting directories and files that could be leveraged during further analysis. It identified potentially sensitive files like .htaccess, .htpasswd, and .hta, though they returned 403 Forbidden, indicating restricted access. Accessible directories such as phpMyAdmin, test, dav and twiki suggest misconfigurations or outdated web applications that may be vulnerable. Notably, /phpinfo.php and /phpinfo are publicly exposed, potentially leaking system and PHP configuration details useful for crafting exploits. These findings highlight weak access controls and outdated components in the web environment, ideal for web-based attack vectors.
 
+After conducting thorough reconnaissance using nmap and gobuster, I identified multiple exposed services and web directories on the Metasploitable machine. Based on the findings, I selected three high-value exploitation targets to demonstrate real-world attack techniques in a controlled lab environment:
+
+- vsftpd 2.3.4 – A vulnerable FTP service with a known backdoor that allows unauthenticated remote shell access.
+
+- phpMyAdmin & phpinfo.php – Misconfigured web applications that expose system information and potentially allow brute-force or file
+  upload attacks.     
+
+- TWiki Web Application – An outdated wiki platform with known remote code execution vulnerabilities.
 
