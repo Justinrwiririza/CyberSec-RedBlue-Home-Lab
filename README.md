@@ -151,10 +151,13 @@ To exploit this, I used Metasploit on the Kali Linux attack machine:
 <img src="https://imgur.com/EqX7a3o.png" alt="CyberSec Lab Diagram" width="600"/>
 I loaded the vsftpd_234_backdoor exploit module
 
+<img src="https://imgur.com/vdNKMKC.png" alt="CyberSec Lab Diagram" width="600"/>
 Set the target IP and confirmed the default port
 
+<img src="https://imgur.com/QPSvuTc.png" alt="CyberSec Lab Diagram" width="600"/>
 Executed the exploit
 
+<img src="https://imgur.com/nN2QNmS.png" alt="CyberSec Lab Diagram" width="600"/>
 Metasploit successfully established a reverse shell connection to the Metasploitable machine, granting me unauthenticated root access to the system. This demonstrated how an outdated service with a known vulnerability can be fully compromised with minimal effort, reinforcing the importance of service hardening and patch management.
 
 
