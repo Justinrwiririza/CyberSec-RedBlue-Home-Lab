@@ -143,3 +143,19 @@ After conducting thorough reconnaissance using nmap and gobuster, I identified m
 
 - TWiki Web Application – An outdated wiki platform with known remote code execution vulnerabilities.
 
+### Exploitation 1: vsftpd 2.3.4 Backdoor
+After identifying vsftpd 2.3.4 running on port 21/tcp, I confirmed that it was a vulnerable version known to contain a built-in backdoor (CVE-2011-2523). This backdoor is triggered when a username with a smiley face  is submitted during the FTP login process, causing the service to spawn a shell on a high-numbered port.
+
+To exploit this, I used Metasploit on the Kali Linux attack machine:
+
+<img src="https://imgur.com/EqX7a3o.png" alt="CyberSec Lab Diagram" width="600"/>
+I loaded the vsftpd_234_backdoor exploit module
+
+Set the target IP and confirmed the default port
+
+Executed the exploit
+
+Metasploit successfully established a reverse shell connection to the Metasploitable machine, granting me unauthenticated root access to the system. This demonstrated how an outdated service with a known vulnerability can be fully compromised with minimal effort, reinforcing the importance of service hardening and patch management.
+
+
+
