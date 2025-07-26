@@ -166,8 +166,14 @@ Metasploit successfully established a reverse shell connection to the Metasploit
 - Tools: Hydra (for brute force), Metasploit, or manual SQL injection if possible.
 #### Reconnaissance
 - Identified Apache service running on port 80 via Nmap.
-  <img src="https://i.imgur.com/GMRBDvG.png" alt="CyberSec Lab Diagram" width="600"/>
+<img src="https://i.imgur.com/GMRBDvG.png" alt="CyberSec Lab Diagram" width="600"/>
   
 - Discovered `/phpmyadmin` directory using Gobuster.
+- Identified the target application phpMyAdmin running on the server
+- Discovered the URL endpoint: http://Target-IP/phpmyadmin.
   
-  <img src="https://i.imgur.com/CS0YyCn.png" alt="CyberSec Lab Diagram" width="600"/>
+<img src="https://i.imgur.com/CS0YyCn.png" alt="CyberSec Lab Diagram" width="600"/>
+
+- Confirmed phpMyAdmin is accessible.
+
+<img src="https://imgur.com/ofiXutY.png" alt="CyberSec Lab Diagram" width="600"/>
