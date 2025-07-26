@@ -161,5 +161,13 @@ Executed the exploit
 Metasploit successfully established a reverse shell connection to the Metasploitable machine, granting me unauthenticated root access to the system. This demonstrated how an outdated service with a known vulnerability can be fully compromised with minimal effort, reinforcing the importance of service hardening and patch management.
 
 ### Exploitation 2: phpMyAdmin Misconfiguration
+- Objective: Exploit a misconfigured phpMyAdmin instance on the target machine to gain remote code execution and escalate privileges.
 - Goal: Gain access to the database and potentially escalate to system-level compromise.
 - Tools: Hydra (for brute force), Metasploit, or manual SQL injection if possible.
+#### Reconnaissance
+- Identified Apache service running on port 80 via Nmap.
+  <img src="https://i.imgur.com/GMRBDvG.png" alt="CyberSec Lab Diagram" width="600"/>
+  
+- Discovered `/phpmyadmin` directory using Gobuster.
+  
+  <img src="https://i.imgur.com/CS0YyCn.png" alt="CyberSec Lab Diagram" width="600"/>
