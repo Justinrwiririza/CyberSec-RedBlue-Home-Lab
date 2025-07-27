@@ -211,6 +211,38 @@ We can fix or reduce the risk by:
   
 <img src="https://imgur.com/KM3liRm.png" alt="CyberSec Lab Diagram" width="600"/>
 
+Exploitation refers to the phase in an attack where an attacker actively uses a vulnerability or weakness to gain unauthorized access to a system, application, or service. This happens after reconnaissance and scanning but before post-exploitation.
+
+### Impact of Exploitation
+### 1. Initial System Compromise
+Attacker gains control of the target system or application.
+### 2. Unauthorized Data Access
+Sensitive data (credentials, PII, financial info) can be read or modified.
+### 3. Privilege Escalation Potential
+Exploitation can lead to root/admin privileges.
+### 4. Deployment of Malware or Backdoors
+Web shells, reverse shells, and persistent scripts can be placed on the server.
+### 5. Network Entry Point
+The compromised system becomes a pivot point to attack other assets.
+
+### Mitigation of Exploitation
+
+### 1. Input Validation & Sanitization
+- Validate user inputs on server side.
+- Use parameterized queries (Prepared Statements) to prevent SQL Injection.
+### 2. Principle of Least Privilege
+- Database users should not have file write permissions (SELECT INTO OUTFILE should be disabled).
+- Web server accounts should not run as root.
+### 3. Apply Security Patches
+Keep web apps, databases, and OS up to date with patches.
+### 4. Web Application Firewall (WAF)
+Block malicious payloads and SQL Injection attempts.
+### 5. Enable Logging & Monitoring
+Monitor web server logs for suspicious requests and unusual patterns
+### 6. Regular Security Testing
+- Perform vulnerability assessments and penetration testing.
+- Use automated tools to detect misconfigurations.
+
 ### Post-Exploitation – Gaining Remote Command Execution via Web Shell
 ### Step 1: Upload a PHP Web Shell via SQL query
 
@@ -232,6 +264,46 @@ Access the uploaded shell in a browser → http://<Target-IP>/shell.php?cmd=unam
 Access the uploaded shell in a browser → http://<Target-IP>/shell.php?cmd=id → Display user and group IDs
 
 <img src="https://imgur.com/Lx6BVsk.png" alt="CyberSec Lab Diagram" width="600"/>
+
+Post-Exploitation refers to the phase after an attacker has successfully gained access to a system. The focus during this stage is on maintaining access, escalating privileges, gathering sensitive information, pivoting within the network, and deploying additional tools or persistence mechanisms. This stage often determines the overall impact of the attack.
+
+### Impact
+
+### 1. Remote Code Execution
+The attacker can execute arbitrary system commands remotely with the same privileges as the web server user (often www-data or apache).
+### 2. Privilege Escalation
+From the web shell, attackers can attempt local privilege escalation exploits to gain root/system access.
+### 3. Full System Compromise
+If the web server user has high privileges or the attacker escalates, the entire system is compromised.
+### 4. Pivoting Inside the Network
+Once a shell is obtained, attackers can scan the internal network and attack other systems.
+### 5. Data Theft or Tampering
+Sensitive data (databases, configs, credentials) can be accessed, modified, or exfiltrated.
+### 6. Persistence
+Attackers can install backdoors, cron jobs, or additional malware to maintain access.
+
+### Mitigation
+### 1. Disable Dangerous PHP Functions
+Disable system(), exec(), shell_exec(), and similar functions in php.ini.
+### 2. Restrict File Upload & Database Features
+- Validate and sanitize all file uploads (allow only safe file types).
+- Disable SELECT INTO OUTFILE in MySQL to prevent arbitrary file writes.
+### 3. Principle of Least Privilege
+- Run the web server under a non-root user with limited permissions.
+- Ensure database users have minimal privileges.
+### 4. Apply Web Application Security Controls
+- Use a Web Application Firewall (WAF) to detect/block malicious requests.
+- Implement proper input validation to prevent SQL Injection
+### 5. Enable Logging & Monitoring
+- Monitor HTTP logs for suspicious queries like ?cmd=.
+- Use IDS/IPS or SIEM solutions to detect abnormal activity.
+### 6. Patch & Harden
+- Keep web applications and servers updated.
+- Disable unused services and enforce strong authentication.
+### 7. Incident Response Readiness
+- Regularly scan for unexpected files (like shell.php).
+- Use integrity checks (e.g., Wazuh...).
+
 
 ### Persistence
 steps and screenshot coming soon
