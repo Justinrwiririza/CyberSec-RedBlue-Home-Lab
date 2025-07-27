@@ -234,3 +234,34 @@ Access the uploaded shell in a browser → http://<Target-IP>/shell.php?cmd=id �
 <img src="https://imgur.com/Lx6BVsk.png" alt="CyberSec Lab Diagram" width="600"/>
 
 ### Persistence
+steps and screenshot coming soon
+
+What is it?
+persistence refers to the attacker establishing a reliable presence on a compromised system or network. Persistence means maintaining that access over time even after reboots, patching, or other remediation efforts. Common techniques used are:
+- Uploading and running web shells (like your PHP shell)
+- Creating backdoor user accounts
+- Installing scheduled tasks (cron jobs)
+- Modifying startup scripts or services
+- Implanting malicious binaries or scripts
+
+### Impact
+
+- Continuous Access: Attackers can maintain long-term access without repeated exploitation.
+- Privilege Escalation: Persistence mechanisms can facilitate escalation to higher privileges.
+- Data Exfiltration: Allows stealthy extraction of sensitive data over time.
+- Lateral Movement: Enables attackers to pivot inside the network to compromise more assets.
+- Difficult Detection: Persistent backdoors often evade detection by antivirus or monitoring tools.
+- System Stability Risks: Malicious persistence can cause system instability or crashes.
+
+### Mitigation
+
+- Restrict File Uploads: Disable or tightly control file upload functionalities on web apps.
+- Harden Web Servers: Restrict web server permissions to prevent writing/executing unauthorized files.
+- Monitor Changes: Use file integrity monitoring to detect unauthorized file changes.
+- Disable Dangerous SQL Functions: Disable SELECT INTO OUTFILE or similar risky database features.
+- Regular Audits: Conduct frequent audits of user accounts, scheduled tasks, and startup scripts
+- Endpoint Detection: Deploy EDR solutions that detect and alert on suspicious persistence behaviors.
+- Apply Patching: Keep software and OS up to date to close known vulnerabilities.
+- Implement Network Segmentation: Limit the attacker’s ability to move laterally.
+- Incident Response Plan: Have clear procedures to identify and remove persistence mechanisms.
+
