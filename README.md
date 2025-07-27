@@ -174,6 +174,14 @@ Metasploit successfully established a reverse shell connection to the Metasploit
   
 <img src="https://i.imgur.com/CS0YyCn.png" alt="CyberSec Lab Diagram" width="600"/>
 
+### Scanning and Enumeration
 - Confirmed phpMyAdmin is accessible.
+- Identified possible login weaknesses (default credentials).
 
 <img src="https://imgur.com/ofiXutY.png" alt="CyberSec Lab Diagram" width="600"/>
+
+### Exploitation
+- Logged in using default credentials (root with no password).
+- Verified full access to the database.
+
+<img src="https://imgur.com/E5PDjE6.png" alt="CyberSec Lab Diagram" width="600"/>
