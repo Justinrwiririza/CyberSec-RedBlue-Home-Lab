@@ -206,3 +206,7 @@ We can fix or reduce the risk by:
 - Verified full access to the database.
 
 <img src="https://imgur.com/E5PDjE6.png" alt="CyberSec Lab Diagram" width="600"/>
+
+- Confirm that you can execute queries without restrictions.
+  
+<img src="https://imgur.com/KM3liRm.png" alt="CyberSec Lab Diagram" width="600"/>
